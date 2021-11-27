@@ -1,0 +1,121 @@
+<script>
+    //Batalla naval
+    var tablero1 = [1, 2, 3, 4, 5];
+    var tablero2 = [1, 2, 3, 4, 5];
+
+    function crearTablero() {
+        let tab1 = [];
+        tab1.push(tablero1)
+
+        var posicion = prompt("Ingrese el barco en la posicion que desea: ");
+        tablero1.push(posicion);
+        var posicion2 = prompt("Ingrese el barco 2 en la posicion que desea: ");
+        tablero1.push(posicion2);
+        var posicion3 = prompt("Ingrese el barco 3 en la posicion que desea: ");
+        tablero1.push(posicion3);
+        return tab1;
+    }
+
+    function crearTablero2() {
+        let tabl2 = [];
+        tabl2.push(tablero2)
+
+        var posicion = prompt("Ingrese el barco en la posicion que desea: ");
+        tablero2.push(posicion);
+        var posicion2 = prompt("Ingrese el barco 2 en la posicion que desea: ");
+        tablero2.push(posicion2);
+        var posicion3 = prompt("Ingrese el barco 3 en la posicion que desea: ");
+        tablero2.push(posicion3);
+        return tabl2;
+
+    }
+
+
+    function mostrarTablero() {
+        let pos = [];
+        let pos2 = [];
+        let pos3 = [];
+        pos.push(tablero1);
+        pos2.push(tablero1);
+        pos3.push(tablero1);
+        document.write(pos + pos2 + pos3);
+    }
+
+    function mostrarTablero2() {
+        let pos = [];
+        let pos2 = [];
+        let pos3 = [];
+        pos.push(tablero2);
+        pos2.push(tablero2);
+        pos3.push(tablero2);
+        document.write(pos + pos2 + pos3);
+
+
+    }
+
+
+    function disparar() {
+        var posicion = prompt("Ingrese la posicion que desea disparar: ");
+        let pos = [];
+        let pos2 = [];
+        let pos3 = [];
+        pos.push(tablero2);
+        pos2.push(tablero2);
+        pos3.push(tablero2);
+        if (posicion == pos || posicion == pos2 || posicion == pos3) {
+            alert("Hundiste un barco");
+        } else {
+            alert("No hundiste un barco");
+        }
+    }
+
+    function disparar2() {
+        var posicion = prompt("Ingrese la posicion que desea disparar: ");
+        let pos = [];
+        let pos2 = [];
+        let pos3 = [];
+        pos.push(tablero1);
+        pos2.push(tablero1);
+        pos3.push(tablero1);
+        if (posicion == pos) {
+            alert("Hundiste un barco");
+
+        } else if (posicion == pos2) {
+            alert("Hundiste un barco");
+
+        } else if (posicion == pos3) {
+            alert("Hundiste un barco");
+
+        } else {
+            alert("No hundiste un barco");
+        }
+    }
+
+
+    function jugador1() {
+        var jugador1 = prompt("Jugador 1, ingresa tu nombre");
+        alert("Bienvenido " + jugador1);
+        crearTablero();
+        mostrarTablero();
+        disparar();
+    }
+
+    function jugador2() {
+        var jugador2 = prompt("Jugador 2, ingresa tu nombre");
+        alert("Bienvenido " + jugador2);
+        crearTablero2();
+        mostrarTablero2();
+        disparar2();
+    }
+
+
+
+    function main() {
+        while (true) {
+            jugador1();
+            jugador2();
+        }
+
+    }
+    main();
+</script>
